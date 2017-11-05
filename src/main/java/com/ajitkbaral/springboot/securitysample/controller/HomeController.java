@@ -12,7 +12,8 @@ import java.util.List;
 @RequestMapping("/")
 public class HomeController {
 
-    @Autowired private UserService userService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login()  {
@@ -23,6 +24,12 @@ public class HomeController {
     public @ResponseBody List<User> getEmployees()  {
         return userService.getAll();
     }
+
+    @RequestMapping(value = "manager", method = RequestMethod.GET)
+    public @ResponseBody List<User> getManagers()  {
+        return userService.getAll();
+    }
+
     @RequestMapping(value = "user", method = RequestMethod.GET)
     public @ResponseBody String getUser()  {
         return "This is the user access";

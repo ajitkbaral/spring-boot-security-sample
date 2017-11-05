@@ -25,7 +25,7 @@ public class User {
     private String password;
     @Column(name = "status")
     private Boolean status;
-    @Column(name = "create_date")
+    @Column(name = "created_date")
     private Date createdDate;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
